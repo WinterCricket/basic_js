@@ -1,9 +1,9 @@
 
 //variable array to be filled, to store item names
-var laundry = []
+//var laundry = ["yellow socks", "old dance shoes", "new dance shoes", "straw hat", "long pants"];
 
 //add to array variable
-laundry.push()
+/*laundry.push()
 
 //to update item in array
 laundry[] = ''
@@ -46,8 +46,8 @@ addItem()
 
 //now make it so you can add new items to list with new variable
 //requirements met: display, add item
-function addItem(clothing) {
-	laundry.push(clothing);
+function addItem(garment) {
+	laundry.push(garment);
 	viewLaundry();
 }
 addItem("code mail socks")
@@ -71,4 +71,29 @@ var me = {
 	sayName: function() {
 		console.log(this.name);
 	}
-}
+}*/
+
+//add functions into the object--use this.property,
+var laundryList = {
+	laundry: ["yellow socks", "old dance shoes", "new dance shoes", "straw hat", "long pants"],
+	viewLaundry: function(){
+		console.log('My damned laundry list: ', this.laundry);
+	},
+	addItem: function(garment){
+		this.laundry.push(garment)
+		this.viewLaundry();
+	},
+	changeItem: function(pos, newVal) {
+		this.laundry[pos] = newVal;
+		this.viewLaundry();
+	},
+	removeItem: function (pos) {
+		this.laundry.splice(pos, 1);
+		this.viewLaundry();
+	}
+};
+
+// removeItem: function (pos) {
+// 	this.laundry.splice(pos, 1);
+// 	viewLaundry();
+// }

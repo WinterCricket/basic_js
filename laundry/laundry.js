@@ -1,26 +1,22 @@
 
-
-
-
-
-
-
-//add functions into the object--use this.property, then
-//make laundryList add objects instead of items, intro boolean
+//build a for loop for this object of laundryList
 var laundryList = {
 	laundry: [],
 	viewLaundry: function(){
-		console.log('My damned laundry list: ', this.laundry);
+		console.log('My damned laundry list: ');
+		for (var i = 0; i < this.laundry.length; i++){
+			console.log(this.laundry[i].laundryText);
+		}
 	},
 	addObj: function(garmentText){
 		this.laundry.push({
-			garmentText: garmentText,
+			laundryText: garmentText,
 			completed: false
 		})
 		this.viewLaundry();
 	},
 	changeObj: function(pos, garmentText) {
-		this.laundry[pos].garmentText = garmentText;
+		this.laundry[pos].laundryText = garmentText;
 		this.viewLaundry();
 	},
 	removeObj: function (pos) {
@@ -28,8 +24,8 @@ var laundryList = {
 		this.viewLaundry();
 	},
 	toggleCompleted: function(pos){
-		var garment = this.laundry[pos];
-		garment.completed = !garment.completed;
+		var laundry = this.laundry[pos];
+		laundry.completed = !laundry.completed;
 		this.viewLaundry();
 	}
 };

@@ -34,5 +34,28 @@ var laundryList = {
 		var laundry = this.laundry[pos];
 		laundry.completed = !laundry.completed;
 		this.viewLaundry();
+	},
+	toggleAll: function(){
+		var totalLaundry = this.laundry.length;
+		var completedLaundry = 0;
+
+		for(var i = 0; i < totalLaundry; i++){
+			if(this.laundry[i].completed === true){
+				completedLaundry++;
+			}
+		}
+
+		if(completedLaundry === totalLaundry){
+			for(var i = 0; i < totalLaundry; i++){
+				this.laundry[i].completed = false;
+            	}
+			} else{
+				for(var i = 0; i < totalLaundry; i++){
+					this.laundry[i].completed = true;
+				}
+				
+			}
+		 
+		this.viewLaundry();
 	}
 };

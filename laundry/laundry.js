@@ -59,3 +59,14 @@ var laundryList = {
 		this.viewLaundry();
 	}
 };
+
+//access to view laundry button and toggle button
+var viewLaundryButton = document.getElementById("viewLaundryButton"); 
+var toggleAllButton = document.getElementById("toggleAllButton");
+// click to run viewLaundry and toggleAll methods 
+viewLaundryButton.addEventListener('click', function(){
+	laundryList.viewLaundry();
+});
+toggleAllButton.addEventListener('click', function(){
+	laundryList.toggleAll();
+}); 

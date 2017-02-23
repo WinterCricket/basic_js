@@ -1,4 +1,5 @@
 
+
 var laundryList = {
 	laundry: [],
 	viewLaundry: function(){
@@ -91,5 +92,17 @@ var handlers = {
 	},
 	toggleAll: function(){
 		laundryList.toggleAll();
+	}
+};
+
+var view = {
+	viewLaundry: function(){
+		var laundryUl = document.querySelector('ul');
+		laundryUl.innerHTML = '';
+		for( var i = 0; i < laundryList.laundry.length; i++){
+			var laundryLi = document.createElement('li');
+			laundryUl.appendChild(laundryLi);
+		}
+		
 	}
 };

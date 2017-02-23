@@ -16,9 +16,31 @@
 			
 			<button onclick="handlers.toggleAll()">Toggle All</button>
 		</div>
-
 		
-
+		<div>
+			<button onclick="handlers.addObj()">Add</button>
+			<input id="addLaundryTextInput" type="text"> 
+		</div>
+		
+		<div>
+			<button onclick="handlers.changeObj()">Change</button>
+			<input id="changeLaundryPositionInput" type="number">
+			<input id="changeLaundryTextInput" type="text">
+		
+		</div>
+		
+		<div>
+			<button onclick="handlers.removeObj()">Delete</button>
+			<input id="removeLaundryPositionInput" type="number">
+			
+		</div>
+		
+		<div>
+			<button  onclick="handlers.toggleCompleted()">Completed</button>
+			<input id="toggleCompletedPositionInput" type="number">
+		</div>
+		
+		
 		<script src="noteplus.js"></script>
 	</body>
 </html>

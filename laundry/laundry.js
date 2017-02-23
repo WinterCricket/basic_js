@@ -66,11 +66,30 @@ var laundryList = {
 var handlers = {
 	viewLaundry: function(){
 		laundryList.viewLaundry();
+	}, 
+	addObj: function(){
+		var addLaundryTextInput = document.getElementById("addLaundryTextInput");
+		laundryList.addObj(addLaundryTextInput.value);
+		addLaundryTextInput.value = '';
+	},
+	changeObj: function(){
+		var changeLaundryPositionInput = document.getElementById("changeLaundryPositionInput");
+		var changeLaundryTextInput = document.getElementById("changeLaundryTextInput");
+		laundryList.changeObj(changeLaundryPositionInput.valueAsNumber,changeLaundryTextInput.value);
+		changeLaundryPositionInput.value = '';
+		changeLaundryTextInput.value = '';
+	},
+	removeObj: function(){
+		var removeLaundryPositionInput = document.getElementById("removeLaundryPositionInput");
+		laundryList.removeObj(removeLaundryPositionInput.valueAsNumber);
+		removeLaundryPositionInput.value = '';
+	},
+	toggleCompleted: function(){
+		var toggleCompletedPositionInput = document.getElementById("toggleCompletedPositionInput");
+		laundryList.toggleCompleted(toggleCompletedPositionInput.valueAsNumber);
+		toggleCompletedPositionInput.value = '';
 	},
 	toggleAll: function(){
 		laundryList.toggleAll();
-	},
-	addObj: function(){
-		laundryList.addOb();
 	}
 };

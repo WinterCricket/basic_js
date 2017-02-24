@@ -22,20 +22,20 @@ var laundryList = {
 			laundryText: garbText,
 			completed: false
 		});
-		this.viewLaundry();
+		
 	},
 	changeObj: function(pos, garbText){
 		this.laundry[pos].laundryText = garbText;
-		this.viewLaundry();
+	
 	},
 	removeObj: function(pos){
 		this.laundry.splice(pos, 1);
-		this.viewLaundry();
+		
 	},
 	toggleCompleted: function(pos){
 		var laundry = this.laundry[pos];
 		laundry.completed = !laundry.completed;
-		this.viewLaundry();
+		
 	},
 	toggleAll: function(){
 		var totalLaundry = this.laundry.length;
@@ -56,7 +56,7 @@ var laundryList = {
 			}
 			
 		}
-		this.viewLaundry();
+		
 		
 	}
 	

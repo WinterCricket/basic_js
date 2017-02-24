@@ -1,22 +1,6 @@
 
 var laundryList = {
 	laundry: [],
-	viewLaundry: function(){
-		if(this.laundry.length === 0){
-			
-			console.log("Your bloody laundry list is bloody empty!");
-		}else{
-			console.log("Here's your stinking list, fool!");
-			for(var i = 0; i < this.laundry.length; i++){
-				if(this.laundry[i].completed == true){
-					console.log('(x)', this.laundry[i].laundryText);
-				}else{
-					console.log('()', this.laundry[i].laundryText);
-				}
-			}
-		}
-		
-	},
 	addObj: function(garbText){
 		this.laundry.push({
 			laundryText: garbText,

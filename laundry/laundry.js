@@ -101,9 +101,17 @@ var view = {
 			}
 			
 			//DOM manipulation
+			laundryLi.id = i;
 			laundryLi.textContent = laundryTextWithCompletion;
+			laundryLi.appendChild(this.createDeleteButton());
 			laundryUl.appendChild(laundryLi);
 		}
 		
+	},
+	createDeleteButton: function(){
+		var deleteButton = document.createElement('button');
+		deleteButton.textContent = "Delete";
+		deleteButton.className = 'deleteButton';
+		return deleteButton;
 	}
 };

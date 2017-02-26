@@ -64,10 +64,8 @@ var handlers = {
 		changeLaundryTextInput.value = '';
 		view.viewLaundry();
 	},
-	removeObj: function(){
-		var removeLaundryPositionInput = document.getElementById("removeLaundryPositionInput");
-		laundryList.removeObj(removeLaundryPositionInput.valueAsNumber);
-		removeLaundryPositionInput.value = '';
+	removeObj: function(pos){
+		laundryList.removeObj(pos);
 		view.viewLaundry();
 	},
 	toggleCompleted: function(){
@@ -113,5 +111,22 @@ var view = {
 		deleteButton.textContent = "Delete";
 		deleteButton.className = 'deleteButton';
 		return deleteButton;
+	},
+	setupEventListeners: function() {
+		var laundryUl = document.querySelector('ul');
+
+		laundryUl.addEventListener('click', function(event){
+			
+			//get element clicked on
+			var elementClicked = event.target;
+			//is elementClicked a delete button?
+			if(elementClicked.className === 'deleteButton'){
+				handlers.removeObj(parseInt(elementClicked.parentNode.id));
+				 
+			}//use chrome dev tools!
+		});
+
 	}
 };
+
+view.setupEventListeners();

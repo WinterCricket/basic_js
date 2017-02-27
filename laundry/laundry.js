@@ -24,24 +24,20 @@ var laundryList = {
 	toggleAll: function(){
 		var totalLaundry = this.laundry.length;
 		var completedLaundry = 0;
-		for(var i = 0; i < totalLaundry; i++){
-			if(this.laundry[i].completed === true){
+
+		this.laundry.forEach(function(launder){
+			if(launder.completed === true){
 				completedLaundry++;
 			}
-		}
-		if(completedLaundry === totalLaundry){
-			for(var i = 0; i < totalLaundry; i++){
-			this.laundry[i].completed = false;	
-			}
-			
-		}else{
-			for(var i = 0; i < totalLaundry; i++){
-				this.laundry[i].completed = true;
-			}
-			
-		}
+		});
 		
-		
+		this.laundry.forEach(function(launder){
+			if(completedLaundry === totalLaundry){
+				launder.completed = false;
+			}else{
+				launder.completed = true;
+			}
+		});
 	}
 	
 	
@@ -86,9 +82,9 @@ var view = {
 		var laundryUl = document.querySelector('ul');
 		laundryUl.innerHTML = '';
 		
-		for( var i = 0; i < laundryList.laundry.length; i++){
+	
+		laundryList.laundry.forEach(function(launder, pos){
 			var laundryLi = document.createElement('li');
-			var launder = laundryList.laundry[i];
 			var laundryTextWithCompletion = '';
 			
 			
@@ -99,11 +95,11 @@ var view = {
 			}
 			
 			//DOM manipulation
-			laundryLi.id = i;
+			laundryLi.id = pos;
 			laundryLi.textContent = laundryTextWithCompletion;
 			laundryLi.appendChild(this.createDeleteButton());
 			laundryUl.appendChild(laundryLi);
-		}
+		}, this);
 		
 	},
 	createDeleteButton: function(){

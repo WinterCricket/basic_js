@@ -1,8 +1,8 @@
 var newItemCounter = 1;
-var ourList = document.getElementById('our-list');
-var ourButton = document.getElementById('our-button');
-var ourHeadline = document.getElementById('our-headline');
-var listItems = document.getElementById("our-list").getElementsByTagName("li");
+var ourList = document.querySelector('#our-list');
+var ourButton = document.querySelector('#our-button');
+var ourHeadline = document.querySelector('#our-headline');
+var listItems = document.querySelector("#our-list li");
 // for(var i = 0; i < listItems.length; i++){
 // 	listItems[i].addEventListener('click', activateItem);
 // }

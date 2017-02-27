@@ -7,7 +7,7 @@ var listItems = document.querySelector("#our-list li");
 // 	listItems[i].addEventListener('click', activateItem);
 // }
 ourList.addEventListener('click', activateItem);
-
+debugger;
 function activateItem(e){
 	if(e.target.nodeName === "LI") {
 		ourHeadline.innerHTML = e.target.innerHTML;
